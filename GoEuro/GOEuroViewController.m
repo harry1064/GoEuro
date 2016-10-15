@@ -2,17 +2,17 @@
 //  ViewController.m
 //  GoEuro
 //
-//  Created by Quinto Technologies Pvt. Ltd. on 16/10/16.
+//  Created by Harpreet Singh. on 16/10/16.
 //  Copyright © 2016 Harpreet Singh. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GOEuroViewController.h"
 
-@interface ViewController ()
+@interface GOEuroViewController ()
 
 @end
 
-@implementation ViewController
+@implementation GOEuroViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
