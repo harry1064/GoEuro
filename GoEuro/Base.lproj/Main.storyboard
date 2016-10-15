@@ -30,7 +30,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="leu-0U-d5A" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="xc9-fu-v1f">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="xc9-fu-v1f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.058823529411764705" green="0.38039215686274508" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>

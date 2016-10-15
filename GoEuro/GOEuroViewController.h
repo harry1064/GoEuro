@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "HPSToggleView.h"
-@interface GOEuroViewController : UIViewController<HPSToggleViewDelegate>
+#import "ObserverBaseClass.h"
+@interface GOEuroViewController : ObserverBaseClass<HPSToggleViewDelegate>
 
 
 @end
