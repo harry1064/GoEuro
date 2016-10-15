@@ -2,8 +2,8 @@
 //  GOEuroListView.m
 //  UIPractice
 //
-//  Created by Quinto Technologies Pvt. Ltd. on 15/10/16.
-//  Copyright © 2016 Quinto Technologies Pvt. Ltd. All rights reserved.
+//  Created by Harpreet Singh on 16/10/16.
+//  Copyright © 2016 Harpreet Singh. All rights reserved.
 //
 
 #import "GOEuroListView.h"
@@ -85,7 +85,7 @@ NSString *const INFO_TABLEVIEW_KEY = @"infoTableView";
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GOEuroListViewCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
-        cell = [[GOEuroListViewCellTableViewCell alloc] initWithType:BUS reuseIdentifier:@"cell"];
+        cell = [[GOEuroListViewCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     NSDictionary *dic = @{
                           @"id": @(1),
@@ -95,7 +95,7 @@ NSString *const INFO_TABLEVIEW_KEY = @"infoTableView";
                           @"arrival_time": @"5:41",
                           @"number_of_stops": @(2)
                           };
-    GoEuroDataModel *model = [[GoEuroDataModel alloc] initWithDictionary:dic];
+    GOEuroDataModel *model = [[GOEuroDataModel alloc] initWithDictionary:dic];
     cell.cellTypeImageView.image = [UIImage imageNamed:cellTypeImageFile];
     [cell.departView.timeLabel setText:[model getDepartureTime]];
     [cell.arriveView.timeLabel setText:[model getArrivalTime]];

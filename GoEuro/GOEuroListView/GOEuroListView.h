@@ -2,8 +2,8 @@
 //  GOEuroListView.h
 //  UIPractice
 //
-//  Created by Quinto Technologies Pvt. Ltd. on 15/10/16.
-//  Copyright © 2016 Quinto Technologies Pvt. Ltd. All rights reserved.
+//  Created by Harpreet Singh on 16/10/16.
+//  Copyright © 2016 Harpreet Singh. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
