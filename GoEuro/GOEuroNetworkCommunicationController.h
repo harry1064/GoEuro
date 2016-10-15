@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <AFNetworking.h>
+typedef void (^networkCompletionBlock)(BOOL finished, id response);
 @interface GOEuroNetworkCommunicationController : NSObject
-
++ (void) makeGetRequestToUrl:(NSString *)urlString
+         withCompletionBlock:(networkCompletionBlock) completionBlock;
 @end

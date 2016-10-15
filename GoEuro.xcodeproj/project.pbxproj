@@ -130,8 +130,7 @@
 			children = (
 				4A1137CF1DB2B11C005C7A12 /* AppDelegate.h */,
 				4A1137D01DB2B11C005C7A12 /* AppDelegate.m */,
-				4A1138371DB2C2E8005C7A12 /* GOEuroNetworkCommunicationController.h */,
-				4A1138381DB2C2E8005C7A12 /* GOEuroNetworkCommunicationController.m */,
+				4A11383A1DB2C339005C7A12 /* GOEuroNetworkCommunicationController */,
 				4A1138221DB2B548005C7A12 /* megabus.png */,
 				4A1138181DB2B522005C7A12 /* GOEuroTitleView */,
 				4A1138111DB2B4DF005C7A12 /* GOEuroDataModel */,
@@ -241,6 +240,15 @@
 				4A1138301DB2B590005C7A12 /* trainWhite.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		4A11383A1DB2C339005C7A12 /* GOEuroNetworkCommunicationController */ = {
+			isa = PBXGroup;
+			children = (
+				4A1138371DB2C2E8005C7A12 /* GOEuroNetworkCommunicationController.h */,
+				4A1138381DB2C2E8005C7A12 /* GOEuroNetworkCommunicationController.m */,
+			);
+			name = GOEuroNetworkCommunicationController;
 			sourceTree = "<group>";
 		};
 		78A3097491B84F8F355D538F /* Pods */ = {

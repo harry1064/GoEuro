@@ -10,4 +10,14 @@
 
 @implementation GOEuroNetworkCommunicationController
 
++ (void) makeGetRequestToUrl:(NSString *)urlString
+         withCompletionBlock:(networkCompletionBlock) completionBlock {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        completionBlock(true, responseObject);
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        completionBlock(false, error);
+    }];
+
+}
 @end
