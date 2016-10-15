@@ -30,7 +30,6 @@ NSString *const ARRIVE_VIEW_KEY = @"arriveView";
     self.providerImageView  = [[UIImageView alloc] init];
     self.providerImageView.translatesAutoresizingMaskIntoConstraints = FALSE;
     self.providerImageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.providerImageView setImage:[UIImage imageNamed:@"megabus.png"]];
     [self.contentView addSubview:self.providerImageView];
     
     self.cellTypeImageView = [[UIImageView alloc] init];
@@ -78,7 +77,7 @@ NSString *const ARRIVE_VIEW_KEY = @"arriveView";
                                                                                                   views:views];
     [NSLayoutConstraint activateConstraints:horizontalConstraintForProviderImageView];
     
-    NSString *verticalConstraintStringForProviderImageView = [NSString stringWithFormat:@"V:|-0-[%@(30)]", PROVIDER_IMAGEVIEW_KEY];
+    NSString *verticalConstraintStringForProviderImageView = [NSString stringWithFormat:@"V:|-10-[%@(30)]", PROVIDER_IMAGEVIEW_KEY];
     NSArray *verticalConstraintForProviderImageView = [NSLayoutConstraint constraintsWithVisualFormat:verticalConstraintStringForProviderImageView
                                                                                                 options:0
                                                                                                 metrics:nil
