@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface GOEuroViewController : UIViewController
+#import "HPSToggleView.h"
+@interface GOEuroViewController : UIViewController<HPSToggleViewDelegate>
 
 
 @end

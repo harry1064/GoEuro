@@ -14,6 +14,19 @@
 		4A1137D91DB2B11D005C7A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A1137D81DB2B11D005C7A12 /* Assets.xcassets */; };
 		4A1137DC1DB2B11D005C7A12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1137DA1DB2B11D005C7A12 /* LaunchScreen.storyboard */; };
 		4A1137E71DB2B11E005C7A12 /* GoEuroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1137E61DB2B11E005C7A12 /* GoEuroTests.m */; };
+		4A1137FB1DB2B39D005C7A12 /* HPSToggleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1137FA1DB2B39D005C7A12 /* HPSToggleView.m */; };
+		4A1137FE1DB2B3D4005C7A12 /* HPSPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1137FD1DB2B3D4005C7A12 /* HPSPagerView.m */; };
+		4A1138091DB2B47F005C7A12 /* GOEuroListViewCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1138081DB2B47F005C7A12 /* GOEuroListViewCellTableViewCell.m */; };
+		4A11380D1DB2B48C005C7A12 /* GOEuroListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A11380C1DB2B48C005C7A12 /* GOEuroListView.m */; };
+		4A1138141DB2B4E0005C7A12 /* GOEuroDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1138131DB2B4E0005C7A12 /* GOEuroDataModel.m */; };
+		4A11381B1DB2B522005C7A12 /* GOEuroTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A11381A1DB2B522005C7A12 /* GOEuroTitleView.m */; };
+		4A1138291DB2B548005C7A12 /* megabus.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A1138221DB2B548005C7A12 /* megabus.png */; };
+		4A1138311DB2B590005C7A12 /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A11382B1DB2B590005C7A12 /* bus.png */; };
+		4A1138321DB2B590005C7A12 /* busWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A11382C1DB2B590005C7A12 /* busWhite.png */; };
+		4A1138331DB2B590005C7A12 /* flight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A11382D1DB2B590005C7A12 /* flight.png */; };
+		4A1138341DB2B590005C7A12 /* flightWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A11382E1DB2B590005C7A12 /* flightWhite.png */; };
+		4A1138351DB2B590005C7A12 /* train.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A11382F1DB2B590005C7A12 /* train.png */; };
+		4A1138361DB2B590005C7A12 /* trainWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A1138301DB2B590005C7A12 /* trainWhite.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +53,25 @@
 		4A1137E21DB2B11E005C7A12 /* GoEuroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoEuroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A1137E61DB2B11E005C7A12 /* GoEuroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoEuroTests.m; sourceTree = "<group>"; };
 		4A1137E81DB2B11E005C7A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A1137F91DB2B39D005C7A12 /* HPSToggleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPSToggleView.h; path = HPSToggleView/HPSToggleView.h; sourceTree = "<group>"; };
+		4A1137FA1DB2B39D005C7A12 /* HPSToggleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPSToggleView.m; path = HPSToggleView/HPSToggleView.m; sourceTree = "<group>"; };
+		4A1137FC1DB2B3D4005C7A12 /* HPSPagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPSPagerView.h; path = HPSPagerView/HPSPagerView.h; sourceTree = "<group>"; };
+		4A1137FD1DB2B3D4005C7A12 /* HPSPagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPSPagerView.m; path = HPSPagerView/HPSPagerView.m; sourceTree = "<group>"; };
+		4A1138071DB2B47F005C7A12 /* GOEuroListViewCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOEuroListViewCellTableViewCell.h; sourceTree = "<group>"; };
+		4A1138081DB2B47F005C7A12 /* GOEuroListViewCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOEuroListViewCellTableViewCell.m; sourceTree = "<group>"; };
+		4A11380B1DB2B48C005C7A12 /* GOEuroListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOEuroListView.h; sourceTree = "<group>"; };
+		4A11380C1DB2B48C005C7A12 /* GOEuroListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOEuroListView.m; sourceTree = "<group>"; };
+		4A1138121DB2B4E0005C7A12 /* GOEuroDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOEuroDataModel.h; sourceTree = "<group>"; };
+		4A1138131DB2B4E0005C7A12 /* GOEuroDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOEuroDataModel.m; sourceTree = "<group>"; };
+		4A1138191DB2B522005C7A12 /* GOEuroTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOEuroTitleView.h; sourceTree = "<group>"; };
+		4A11381A1DB2B522005C7A12 /* GOEuroTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOEuroTitleView.m; sourceTree = "<group>"; };
+		4A1138221DB2B548005C7A12 /* megabus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = megabus.png; sourceTree = "<group>"; };
+		4A11382B1DB2B590005C7A12 /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bus.png; sourceTree = "<group>"; };
+		4A11382C1DB2B590005C7A12 /* busWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = busWhite.png; sourceTree = "<group>"; };
+		4A11382D1DB2B590005C7A12 /* flight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flight.png; sourceTree = "<group>"; };
+		4A11382E1DB2B590005C7A12 /* flightWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flightWhite.png; sourceTree = "<group>"; };
+		4A11382F1DB2B590005C7A12 /* train.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = train.png; sourceTree = "<group>"; };
+		4A1138301DB2B590005C7A12 /* trainWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trainWhite.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +115,19 @@
 			children = (
 				4A1137CF1DB2B11C005C7A12 /* AppDelegate.h */,
 				4A1137D01DB2B11C005C7A12 /* AppDelegate.m */,
-				4A1137D21DB2B11C005C7A12 /* GOEuroViewController.h */,
-				4A1137D31DB2B11C005C7A12 /* GOEuroViewController.m */,
+				4A1138221DB2B548005C7A12 /* megabus.png */,
+				4A1138181DB2B522005C7A12 /* GOEuroTitleView */,
+				4A1138111DB2B4DF005C7A12 /* GOEuroDataModel */,
+				4A11380A1DB2B48C005C7A12 /* GOEuroListView */,
+				4A1138061DB2B47F005C7A12 /* GOEuroListViewTableViewCell */,
+				4A1137FF1DB2B3DA005C7A12 /* HPSPagerView */,
+				4A1137F81DB2B32D005C7A12 /* HPSToggleView */,
+				4A1137F11DB2B2C4005C7A12 /* GOEuroViewController */,
 				4A1137D51DB2B11C005C7A12 /* Main.storyboard */,
 				4A1137D81DB2B11D005C7A12 /* Assets.xcassets */,
 				4A1137DA1DB2B11D005C7A12 /* LaunchScreen.storyboard */,
 				4A1137DD1DB2B11D005C7A12 /* Info.plist */,
+				4A11382A1DB2B590005C7A12 /* Images */,
 				4A1137CC1DB2B11C005C7A12 /* Supporting Files */,
 			);
 			path = GoEuro;
@@ -109,6 +148,82 @@
 				4A1137E81DB2B11E005C7A12 /* Info.plist */,
 			);
 			path = GoEuroTests;
+			sourceTree = "<group>";
+		};
+		4A1137F11DB2B2C4005C7A12 /* GOEuroViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4A1137D21DB2B11C005C7A12 /* GOEuroViewController.h */,
+				4A1137D31DB2B11C005C7A12 /* GOEuroViewController.m */,
+			);
+			name = GOEuroViewController;
+			sourceTree = "<group>";
+		};
+		4A1137F81DB2B32D005C7A12 /* HPSToggleView */ = {
+			isa = PBXGroup;
+			children = (
+				4A1137F91DB2B39D005C7A12 /* HPSToggleView.h */,
+				4A1137FA1DB2B39D005C7A12 /* HPSToggleView.m */,
+			);
+			name = HPSToggleView;
+			sourceTree = "<group>";
+		};
+		4A1137FF1DB2B3DA005C7A12 /* HPSPagerView */ = {
+			isa = PBXGroup;
+			children = (
+				4A1137FC1DB2B3D4005C7A12 /* HPSPagerView.h */,
+				4A1137FD1DB2B3D4005C7A12 /* HPSPagerView.m */,
+			);
+			name = HPSPagerView;
+			sourceTree = "<group>";
+		};
+		4A1138061DB2B47F005C7A12 /* GOEuroListViewTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4A1138071DB2B47F005C7A12 /* GOEuroListViewCellTableViewCell.h */,
+				4A1138081DB2B47F005C7A12 /* GOEuroListViewCellTableViewCell.m */,
+			);
+			path = GOEuroListViewTableViewCell;
+			sourceTree = "<group>";
+		};
+		4A11380A1DB2B48C005C7A12 /* GOEuroListView */ = {
+			isa = PBXGroup;
+			children = (
+				4A11380B1DB2B48C005C7A12 /* GOEuroListView.h */,
+				4A11380C1DB2B48C005C7A12 /* GOEuroListView.m */,
+			);
+			path = GOEuroListView;
+			sourceTree = "<group>";
+		};
+		4A1138111DB2B4DF005C7A12 /* GOEuroDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A1138121DB2B4E0005C7A12 /* GOEuroDataModel.h */,
+				4A1138131DB2B4E0005C7A12 /* GOEuroDataModel.m */,
+			);
+			path = GOEuroDataModel;
+			sourceTree = "<group>";
+		};
+		4A1138181DB2B522005C7A12 /* GOEuroTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				4A1138191DB2B522005C7A12 /* GOEuroTitleView.h */,
+				4A11381A1DB2B522005C7A12 /* GOEuroTitleView.m */,
+			);
+			path = GOEuroTitleView;
+			sourceTree = "<group>";
+		};
+		4A11382A1DB2B590005C7A12 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4A11382B1DB2B590005C7A12 /* bus.png */,
+				4A11382C1DB2B590005C7A12 /* busWhite.png */,
+				4A11382D1DB2B590005C7A12 /* flight.png */,
+				4A11382E1DB2B590005C7A12 /* flightWhite.png */,
+				4A11382F1DB2B590005C7A12 /* train.png */,
+				4A1138301DB2B590005C7A12 /* trainWhite.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,9 +309,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A1138321DB2B590005C7A12 /* busWhite.png in Resources */,
+				4A1138341DB2B590005C7A12 /* flightWhite.png in Resources */,
+				4A1138311DB2B590005C7A12 /* bus.png in Resources */,
 				4A1137DC1DB2B11D005C7A12 /* LaunchScreen.storyboard in Resources */,
 				4A1137D91DB2B11D005C7A12 /* Assets.xcassets in Resources */,
 				4A1137D71DB2B11C005C7A12 /* Main.storyboard in Resources */,
+				4A1138331DB2B590005C7A12 /* flight.png in Resources */,
+				4A1138291DB2B548005C7A12 /* megabus.png in Resources */,
+				4A1138361DB2B590005C7A12 /* trainWhite.png in Resources */,
+				4A1138351DB2B590005C7A12 /* train.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,9 +336,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A1138141DB2B4E0005C7A12 /* GOEuroDataModel.m in Sources */,
 				4A1137D41DB2B11C005C7A12 /* GOEuroViewController.m in Sources */,
+				4A1137FB1DB2B39D005C7A12 /* HPSToggleView.m in Sources */,
 				4A1137D11DB2B11C005C7A12 /* AppDelegate.m in Sources */,
+				4A11381B1DB2B522005C7A12 /* GOEuroTitleView.m in Sources */,
+				4A1138091DB2B47F005C7A12 /* GOEuroListViewCellTableViewCell.m in Sources */,
+				4A11380D1DB2B48C005C7A12 /* GOEuroListView.m in Sources */,
 				4A1137CE1DB2B11C005C7A12 /* main.m in Sources */,
+				4A1137FE1DB2B3D4005C7A12 /* HPSPagerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
