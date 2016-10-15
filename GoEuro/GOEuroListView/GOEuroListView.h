@@ -17,4 +17,5 @@ typedef enum{
 @interface GOEuroListView : UIView<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) NSString *title;
 - (id) initWithType:(LIST_TYPE)type;
+- (void) refreshView;
 @end
