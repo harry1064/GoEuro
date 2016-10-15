@@ -100,7 +100,7 @@ NSString *const INFO_TABLEVIEW_KEY = @"infoTableView";
     }
     NSDictionary *dic = [resApiDataArray objectAtIndex:indexPath.row];
     GOEuroDataModel *model = [[GOEuroDataModel alloc] initWithDictionary:dic];
-    [cell.providerImageView setImageWithURL:[NSURL URLWithString:[model getProvideImageUrl]] placeholderImage:[UIImage imageNamed:@"megabus.png"]];
+    [cell.providerImageView setImageWithURL:[NSURL URLWithString:[model getProvideImageUrl]] placeholderImage:[UIImage imageNamed:@"defualtGoEuro.png"]];
     cell.cellTypeImageView.image = [UIImage imageNamed:cellTypeImageFile];
     [cell.departView.timeLabel setText:[model getDepartureTime]];
     [cell.arriveView.timeLabel setText:[model getArrivalTime]];
