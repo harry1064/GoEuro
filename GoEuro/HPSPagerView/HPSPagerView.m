@@ -71,7 +71,7 @@
 - (void) loadHPSPagerViewWithView:(NSArray *)views {
     [self layoutIfNeeded];
     CGFloat width = self.frame.size.width;
-    CGFloat height = self.frame.size.height;
+    CGFloat height = self.frame.size.height - 64;
     for (int i = 0; i < views.count; i++) {
         UIView *view = (UIView *)[views[i] objectForKey:@"view"];
         [view setFrame:CGRectMake(i * width, 0, width, height)];
