@@ -10,6 +10,7 @@
 
 @interface GOEuroDataModel : NSObject
 - (id) initWithDictionary:(NSDictionary *)dictionary;
+- (NSString *) getProvideImageUrl;
 - (NSString *) getDepartureTime;
 - (NSString *) getArrivalTime;
 - (NSString *) getNumberOfStopsAndDuration;

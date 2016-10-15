@@ -39,6 +39,10 @@ NSString *const DATE_FORMAT = @"dd/MM/YYYY";
     return self;
 }
 
+- (NSString *) getProvideImageUrl {
+    return [self.provider_logo stringByReplacingOccurrencesOfString:@"{size}" withString:@"63"];
+}
+
 - (NSString *) getDepartureTime {
     return self.departure_time;
 }
