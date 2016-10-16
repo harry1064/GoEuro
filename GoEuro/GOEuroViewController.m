@@ -27,7 +27,6 @@
     trainView = [[GOEuroListView alloc] initWithType:TRAIN];
     busView = [[GOEuroListView alloc] initWithType:BUS];
     flightView = [[GOEuroListView alloc] initWithType:FLIGHT];
-    
     [self setupViews];
 }
 
@@ -82,12 +81,15 @@
     switch (index) {
         case 0:
             image = [UIImage imageNamed:@"trainWhite.png"];
+             [trainView hideFilter];
             break;
         case 1:
             image = [UIImage imageNamed:@"busWhite.png"];
+            [busView hideFilter];
             break;
         case 2:
             image = [UIImage imageNamed:@"flightWhite.png"];
+            [flightView hideFilter];
             break;
         default:
             break;

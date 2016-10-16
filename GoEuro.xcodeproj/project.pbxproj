@@ -30,6 +30,8 @@
 		4A1138391DB2C2E8005C7A12 /* GOEuroNetworkCommunicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1138381DB2C2E8005C7A12 /* GOEuroNetworkCommunicationController.m */; };
 		4A1138421DB2ECAD005C7A12 /* ObserverBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1138411DB2ECAD005C7A12 /* ObserverBaseClass.m */; };
 		4A1138441DB2F6BD005C7A12 /* defualtGoEuro.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A1138431DB2F6BD005C7A12 /* defualtGoEuro.png */; };
+		4A1138471DB364C1005C7A12 /* GOEuroFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1138461DB364C1005C7A12 /* GOEuroFilterView.m */; };
+		4A11384E1DB38F6D005C7A12 /* sort.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A11384D1DB38F6D005C7A12 /* sort.png */; };
 		E02799B12D6904541A9A2540 /* libPods-GoEuroTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA557B01BF722141FCC78F1D /* libPods-GoEuroTests.a */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +83,9 @@
 		4A1138401DB2ECAD005C7A12 /* ObserverBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObserverBaseClass.h; sourceTree = "<group>"; };
 		4A1138411DB2ECAD005C7A12 /* ObserverBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObserverBaseClass.m; sourceTree = "<group>"; };
 		4A1138431DB2F6BD005C7A12 /* defualtGoEuro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defualtGoEuro.png; sourceTree = "<group>"; };
+		4A1138451DB364C1005C7A12 /* GOEuroFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GOEuroFilterView.h; path = GOEuroFilterView/GOEuroFilterView.h; sourceTree = "<group>"; };
+		4A1138461DB364C1005C7A12 /* GOEuroFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GOEuroFilterView.m; path = GOEuroFilterView/GOEuroFilterView.m; sourceTree = "<group>"; };
+		4A11384D1DB38F6D005C7A12 /* sort.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sort.png; sourceTree = "<group>"; };
 		844AC96DB147CA29F852D818 /* Pods-GoEuroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoEuroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoEuroTests/Pods-GoEuroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		992AC05007B70AA6FB19D6D2 /* Pods-GoEuro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoEuro.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoEuro/Pods-GoEuro.release.xcconfig"; sourceTree = "<group>"; };
 		A92D0DEA14A6532419F21A75 /* Pods-GoEuro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoEuro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoEuro/Pods-GoEuro.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +138,7 @@
 			children = (
 				4A1137CF1DB2B11C005C7A12 /* AppDelegate.h */,
 				4A1137D01DB2B11C005C7A12 /* AppDelegate.m */,
+				4A1138481DB364CC005C7A12 /* GOEuroFilterView */,
 				4A11383F1DB2ECAD005C7A12 /* ObserverBaseClass */,
 				4A11383A1DB2C339005C7A12 /* GOEuroNetworkCommunicationController */,
 				4A1138181DB2B522005C7A12 /* GOEuroTitleView */,
@@ -235,6 +241,7 @@
 		4A11382A1DB2B590005C7A12 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4A11384D1DB38F6D005C7A12 /* sort.png */,
 				4A1138431DB2F6BD005C7A12 /* defualtGoEuro.png */,
 				4A11382B1DB2B590005C7A12 /* bus.png */,
 				4A11382C1DB2B590005C7A12 /* busWhite.png */,
@@ -262,6 +269,15 @@
 				4A1138411DB2ECAD005C7A12 /* ObserverBaseClass.m */,
 			);
 			path = ObserverBaseClass;
+			sourceTree = "<group>";
+		};
+		4A1138481DB364CC005C7A12 /* GOEuroFilterView */ = {
+			isa = PBXGroup;
+			children = (
+				4A1138451DB364C1005C7A12 /* GOEuroFilterView.h */,
+				4A1138461DB364C1005C7A12 /* GOEuroFilterView.m */,
+			);
+			name = GOEuroFilterView;
 			sourceTree = "<group>";
 		};
 		78A3097491B84F8F355D538F /* Pods */ = {
@@ -383,6 +399,7 @@
 				4A1138331DB2B590005C7A12 /* flight.png in Resources */,
 				4A1138361DB2B590005C7A12 /* trainWhite.png in Resources */,
 				4A1138351DB2B590005C7A12 /* train.png in Resources */,
+				4A11384E1DB38F6D005C7A12 /* sort.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +513,7 @@
 				4A1138141DB2B4E0005C7A12 /* GOEuroDataModel.m in Sources */,
 				4A1137D41DB2B11C005C7A12 /* GOEuroViewController.m in Sources */,
 				4A1137FB1DB2B39D005C7A12 /* HPSToggleView.m in Sources */,
+				4A1138471DB364C1005C7A12 /* GOEuroFilterView.m in Sources */,
 				4A1137D11DB2B11C005C7A12 /* AppDelegate.m in Sources */,
 				4A1138421DB2ECAD005C7A12 /* ObserverBaseClass.m in Sources */,
 				4A11381B1DB2B522005C7A12 /* GOEuroTitleView.m in Sources */,
