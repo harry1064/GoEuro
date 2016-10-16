@@ -21,6 +21,7 @@ NSString *const ARRIVE_VIEW_KEY = @"arriveView";
 
 - (id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         [self setupViews];
     }
     return self;
