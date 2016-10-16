@@ -18,4 +18,5 @@ typedef enum{
 @property (nonatomic, strong) NSString *title;
 - (id) initWithType:(LIST_TYPE)type;
 - (void) refreshView;
+- (void) hideFilter;
 @end

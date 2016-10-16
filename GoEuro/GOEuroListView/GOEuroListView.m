@@ -11,10 +11,15 @@
 #import "GOEuroListViewCellTableViewCell.h"
 #import "GOEuroNetworkCommunicationController.h"
 #import <UIImageView+AFNetworking.h>
+#import "GOEuroFilterView.h"
 NSString *const INFO_TABLEVIEW_KEY = @"infoTableView";
+NSString *const FILTER_BUTTON_KEY = @"filterButton";
+NSString *const FILTER_VIEW_KEY = @"filterKey";
 @interface GOEuroListView ()
 @property (nonatomic) LIST_TYPE listType;
 @property (nonatomic, strong) UITableView *infoTableView;
+@property (nonatomic, strong) UIButton *filterButton;
+@property (nonatomic, strong) GOEuroFilterView *filterView;
 @end
 
 @implementation GOEuroListView
@@ -22,6 +27,9 @@ NSString *const INFO_TABLEVIEW_KEY = @"infoTableView";
     NSString *cellTypeImageFile;
     NSString *restApiUrl;
     NSArray *resApiDataArray;
+    ORDER_BY defaultOrderBy;
+    NSArray *widthConstraintsForFilterView;
+    NSArray *heightConstraintsForFilterView;
 }
 
 - (id) initWithType:(LIST_TYPE)type {
@@ -53,6 +61,7 @@ NSString *const INFO_TABLEVIEW_KEY = @"infoTableView";
         default:
             break;
     }
+    defaultOrderBy = DEPARTURE;
 }
 
 - (void) setupViews {
@@ -65,12 +74,35 @@ NSString *const INFO_TABLEVIEW_KEY = @"infoTableView";
     self.infoTableView.backgroundView = [self getBackgroundViewForInfoTableView];
     [self addSubview:self.infoTableView];
     
+    self.filterView = [[GOEuroFilterView alloc] init];
+    self.filterView.clipsToBounds = YES;
+    self.filterView.translatesAutoresizingMaskIntoConstraints = FALSE;
+    [self addSubview:self.filterView];
+    
+    [self.filterView notifyWithChangeBlock:^(ORDER_BY orderby) {
+        defaultOrderBy = orderby;
+        [self hideFilter];
+        [self sortArray];
+    }];
+    
+    self.filterButton = [[UIButton alloc] init];
+    self.filterButton.translatesAutoresizingMaskIntoConstraints = FALSE;
+    [self.filterButton addTarget:self action:@selector(filterButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.filterButton setImageEdgeInsets:UIEdgeInsetsMake(10, 10, 10 , 10)];
+    [self.filterButton setImage:[UIImage imageNamed:@"sort.png"] forState:UIControlStateNormal];
+    [self.filterButton setBackgroundColor:[UIColor darkGrayColor]];
+    [self addSubview:self.filterButton];
+    
+    
+    
     [self setupViewsConstraints];
 }
 
 - (void) setupViewsConstraints {
     NSMutableDictionary *views = [[NSMutableDictionary alloc] init];
     [views setObject:self.infoTableView forKey:INFO_TABLEVIEW_KEY];
+    [views setObject:self.filterButton forKey:FILTER_BUTTON_KEY];
+    [views setObject:self.filterView forKey:FILTER_VIEW_KEY];
     
     NSString *horizontalConstraintStringForInfoTableview = [NSString stringWithFormat:@"H:|-0-[%@]-0-|", INFO_TABLEVIEW_KEY];
     NSArray *horizontalConstraintsForInfoTableView = [NSLayoutConstraint constraintsWithVisualFormat:horizontalConstraintStringForInfoTableview
@@ -86,6 +118,48 @@ NSString *const INFO_TABLEVIEW_KEY = @"infoTableView";
                                                                                              views:views];
     [NSLayoutConstraint activateConstraints:verticalConstraintsForInfoTableView];
     
+    NSArray *horizontalConstraintForFilterButton = [NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"H:[%@(40)]-10-|", FILTER_BUTTON_KEY]
+                                                                                           options:0
+                                                                                           metrics:nil
+                                                                                             views:views];
+    [NSLayoutConstraint activateConstraints:horizontalConstraintForFilterButton];
+    
+    NSArray *verticalConstraintForFilterButton = [NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"V:|-10-[%@(40)]", FILTER_BUTTON_KEY]
+                                                                                           options:0
+                                                                                           metrics:nil
+                                                                                             views:views];
+    [NSLayoutConstraint activateConstraints:verticalConstraintForFilterButton];
+    
+    
+    NSArray *horizontalConstraintsForFilterView = [NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"H:[%@]-30-|", FILTER_VIEW_KEY]
+                                                                                           options:0
+                                                                                           metrics:nil
+                                                                                             views:views];
+    [NSLayoutConstraint activateConstraints:horizontalConstraintsForFilterView];
+    
+    NSArray *verticalConstraintsForFilterView = [NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"V:|-30-[%@]", FILTER_VIEW_KEY]
+                                                                                         options:0
+                                                                                         metrics:nil
+                                                                                           views:views];
+    [NSLayoutConstraint activateConstraints:verticalConstraintsForFilterView];
+    
+    widthConstraintsForFilterView = [NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"H:[%@(0)]", FILTER_VIEW_KEY]
+                                                                           options:0
+                                                                           metrics:nil
+                                                                             views:views];
+    [NSLayoutConstraint activateConstraints:widthConstraintsForFilterView];
+    heightConstraintsForFilterView = [NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"V:[%@(0)]", FILTER_VIEW_KEY]
+                                                                                        options:0
+                                                                                        metrics:nil
+                                                                                          views:views];
+    [NSLayoutConstraint activateConstraints:heightConstraintsForFilterView];
+    
+    self.filterButton.layer.cornerRadius = 20.0f;
+    self.filterButton.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    self.filterButton.layer.shadowOpacity = 0.8;
+    self.filterButton.layer.shadowRadius = 2;
+    self.filterButton.layer.shadowOffset = CGSizeMake(-2.0f, 2.0f);
+    
     [self getRestApiData];
 }
 
@@ -98,8 +172,7 @@ NSString *const INFO_TABLEVIEW_KEY = @"infoTableView";
     if (!cell) {
         cell = [[GOEuroListViewCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    NSDictionary *dic = [resApiDataArray objectAtIndex:indexPath.row];
-    GOEuroDataModel *model = [[GOEuroDataModel alloc] initWithDictionary:dic];
+    GOEuroDataModel *model = (GOEuroDataModel *)[resApiDataArray objectAtIndex:indexPath.row];
     [cell.providerImageView setImageWithURL:[NSURL URLWithString:[model getProvideImageUrl]] placeholderImage:[UIImage imageNamed:@"defualtGoEuro.png"]];
     cell.cellTypeImageView.image = [UIImage imageNamed:cellTypeImageFile];
     [cell.departView.timeLabel setText:[model getDepartureTime]];
@@ -124,8 +197,13 @@ NSString *const INFO_TABLEVIEW_KEY = @"infoTableView";
     [GOEuroNetworkCommunicationController makeGetRequestToUrl:restApiUrl withCompletionBlock:^(BOOL finished, id response) {
         [self hideNetworkCallIndicator];
         if (finished && response) {
-            resApiDataArray = response;
-            [self.infoTableView reloadData];
+            NSMutableArray *results = [NSMutableArray array];
+            for (NSDictionary *dic in response) {
+                GOEuroDataModel *model = [[GOEuroDataModel alloc] initWithDictionary:dic];
+                [results addObject:model];
+            }
+            resApiDataArray = results;
+            [self sortArray];
         }else {
             //Handle Error to notify user
         }
@@ -217,6 +295,57 @@ NSString *const INFO_TABLEVIEW_KEY = @"infoTableView";
     
     return indicatorView;
 }
+
+- (void) sortArray {
+    
+    NSString *key;
+    switch (defaultOrderBy) {
+        case DEPARTURE:
+            key = @"departure_time";
+            break;
+        case ARRIVAL:
+            key = @"arrival_time";
+            break;
+        case DURATION:
+            key = @"duration";
+            break;
+        default:
+            break;
+    }
+    NSSortDescriptor *sortByName = [NSSortDescriptor sortDescriptorWithKey:key
+                                                                 ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortByName];
+    NSArray *sortedArray = [resApiDataArray sortedArrayUsingDescriptors:sortDescriptors];
+    resApiDataArray = sortedArray;
+    [self.infoTableView reloadData];
+}
+
+- (void) filterButtonClicked:(UIButton *) button {
+    if (button.isSelected) {
+        [button setSelected:NO];
+        [self hideFilter];
+    } else {
+        [button setSelected:YES];
+        [self showFilter];
+    }
+}
+
+- (void) showFilter  {
+    [NSLayoutConstraint deactivateConstraints:widthConstraintsForFilterView];
+    [NSLayoutConstraint deactivateConstraints:heightConstraintsForFilterView];
+    [UIView animateWithDuration:0.2 animations:^{
+        [self layoutIfNeeded];
+    }];
+}
+
+- (void) hideFilter {
+    [NSLayoutConstraint activateConstraints:widthConstraintsForFilterView];
+    [NSLayoutConstraint activateConstraints:heightConstraintsForFilterView];
+    [UIView animateWithDuration:0.2 animations:^{
+        [self layoutIfNeeded];
+    }];
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
