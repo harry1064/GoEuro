@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @interface GOEuroDataModel : NSObject
 - (id) initWithDictionary:(NSDictionary *)dictionary;
 - (NSString *) getProvideImageUrl;

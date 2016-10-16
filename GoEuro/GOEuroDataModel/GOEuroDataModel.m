@@ -7,7 +7,6 @@
 //
 
 #import "GOEuroDataModel.h"
-
 NSString *const PROVIDER_LOGO = @"provider_logo";
 NSString *const PRICE_IN_EUROS = @"price_in_euros";
 NSString *const DEPARTURE_TIME = @"departure_time";
@@ -20,6 +19,7 @@ NSString *const DATE_FORMAT = @"dd/MM/YYYY";
 @property (nonatomic, strong) NSString *departure_time;
 @property (nonatomic, strong) NSString *arrival_time;
 @property (nonatomic) NSInteger number_of_stops;
+@property (nonatomic, strong) NSString *duration;
 @end
 
 @implementation GOEuroDataModel {
@@ -35,6 +35,7 @@ NSString *const DATE_FORMAT = @"dd/MM/YYYY";
         self.number_of_stops = [[dictionary objectForKey:NUMBER_OF_STOPS] integerValue];
         depatureDate = [NSDate date];
         arrivalDate = [depatureDate copy];
+        self.duration = [self getDuration];
     }
     return self;
 }
@@ -52,7 +53,7 @@ NSString *const DATE_FORMAT = @"dd/MM/YYYY";
 }
 
 - (NSString *) getNumberOfStopsAndDuration {
-    return (self.number_of_stops > 0) ? [NSString stringWithFormat:@"%ld stops, %@", (long)self.number_of_stops, [self getDuration]] : [NSString stringWithFormat:@"Direct, %@", [self getDuration]];
+    return (self.number_of_stops > 0) ? [NSString stringWithFormat:@"%ld stops, %@", (long)self.number_of_stops, [self getDuration]] : [NSString stringWithFormat:@"Direct, %@", self.duration];
 }
 
 - (NSString *) getPriceInEuros {
@@ -92,7 +93,11 @@ NSString *const DATE_FORMAT = @"dd/MM/YYYY";
                                                   options:0];
     }
     int mintute = ((int)distanceBetweenDates % secondsInAnHour) / 60;
-    return (mintute > 0) ? [NSString stringWithFormat:@"%d:%dh", hour, mintute] : [NSString stringWithFormat:@"%dh", hour];
+    NSString *hString;
+    hString =  (hour > 9) ? [NSString stringWithFormat:@"%d", hour] : [NSString stringWithFormat:@"0%d", hour];
+    NSString *mString;
+    mString =  (mintute > 9) ? [NSString stringWithFormat:@"%d", mintute] : [NSString stringWithFormat:@"0%d", mintute];
+    return [NSString stringWithFormat:@"%@:%@h", hString, mString];
 }
 
 #pragma  mark PRIVATE CLASS METHODS
